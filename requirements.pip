@@ -1,2 +1,4 @@
 requests
 tdigest
+kafka-python
+numpy
