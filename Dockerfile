@@ -28,6 +28,8 @@ RUN chown root.root /etc/bootstrap.sh
 RUN chmod 700 /etc/bootstrap.sh
 RUN mkdir -p /home/root
 ADD start_ipython.sh /home/root/start_ipython.sh
+ADD requirements.pip requirements.pip
+RUN pip install -r requirements.pip
 ENTRYPOINT ["/etc/bootstrap.sh"]
 
 
