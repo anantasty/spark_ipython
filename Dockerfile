@@ -27,7 +27,7 @@ COPY bootstrap.sh /etc/bootstrap.sh
 RUN chown root.root /etc/bootstrap.sh
 RUN chmod 700 /etc/bootstrap.sh
 RUN mkdir -p /home/root
-ADD spark-streaming-kafka-assembly_2.10-1.3.0.jar /usr/local/spark-1.5.1-bin-hadoop2.6/lib/spark-streaming-kafka-assembly_2.10-1.3.0.jar
+ADD kafka_assembly.jar /usr/local/spark-1.5.1-bin-hadoop2.6/lib/kafka_assembly.jar
 ADD requirements.pip requirements.pip
 RUN pip install -r requirements.pip
 
