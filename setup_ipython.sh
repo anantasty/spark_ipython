@@ -1,1 +1,1 @@
-pip2.7 install "ipython[all]"
+pip2.7 install "jupyter"

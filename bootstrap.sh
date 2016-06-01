@@ -12,8 +12,10 @@ cd $HADOOP_PREFIX/share/hadoop/common ; for cp in ${ACP//,/ }; do  echo == $cp; 
 # altering the core-site configuration
 sed s/HOSTNAME/$HOSTNAME/ /usr/local/hadoop/etc/hadoop/core-site.xml.template > /usr/local/hadoop/etc/hadoop/core-site.xml
 
+export YARN_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
+export PATH=$PATH:$SPARK_HOME/bin:$HADOOP_PREFIX/bin
 # setting spark defaults
-echo spark.yarn.jar hdfs:///spark/spark-assembly-1.5.1-hadoop2.6.0.jar > $SPARK_HOME/conf/spark-defaults.conf
+echo spark.yarn.jar hdfs:///spark/spark-assembly-1.6.1-hadoop2.6.0.jar > $SPARK_HOME/conf/spark-defaults.conf
 cp $SPARK_HOME/conf/metrics.properties.template $SPARK_HOME/conf/metrics.properties
 
 service ssh start
